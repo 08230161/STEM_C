@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Creative Resource Hub - Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/styles.css" rel="stylesheet">
+  <script src="js/script.js" defer></script>
+  <style>
+    html {
+      scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with hamburger and nav -->
+  <header class="header">
+    <!-- Hamburger button -->
+    <div id="hamburger" class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="logo">
+      <h2>Creative Resource Hub</h2>
+    </div>
+
+    <nav class="main-nav">
+      <!-- Wrap both nav links and buttons in a single flex container -->
+      <div class="nav-container">
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#templates">Templates</a></li>
+          <li><a href="#logos">Logos</a></li>
+          <li class="about-modal-link">
+            <a href="#">About Us</a>
+            <div class="about-modal">
+              <h2>About Us</h2>
+              <h3>Our Team</h3>
+              <div class="team-grid">
+                <div class="team-member">
+                  <img src="images/member1.jpg" alt="Member 1">
+                  <div class="member-info">
+                    <h4>Pabitra Yakha</h4>
+                    <p>Founder and Developer</p>
+                  </div>
+                </div>
+                <div class="team-member">
+                  <img src="images/member2.jpg" alt="Member 2">
+                  <div class="member-info">
+                    <h4>Tsheten Lhamo</h4>
+                    <p>Researcher and co-founder</p>
+                  </div>
+                </div>
+                <div class="team-member">
+                  <img src="images/member3.jpg" alt="Member 3">
+                  <div class="member-info">
+                    <h4>Sanjay Chhertri</h4>
+                    <p>Designer and Support</p>
+                  </div>
+                </div>
+                <div class="team-member">
+                  <img src="images/member4.jpg" alt="Member 4">
+                  <div class="member-info">
+                    <h4>Sonam Choki</h4>
+                    <p>Designer and Support</p>
+                  </div>
+                </div>
+                <div class="team-member">
+                  <img src="images/member5.jpg" alt="Member 5">
+                  <div class="member-info">
+                    <h4>Tshering Choden</h4>
+                    <p>Project Leader</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- Feedback Link in Nav -->
+          <li><a href="#" class="feedback-modal-btn">Feedback</a></li>
+        </ul>
+
+        <!-- Auth buttons -->
+        <div class="auth-buttons">
+          <button id="loginBtn">Login</button>
+          <button id="signupBtn">Sign Up</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Side Menu (Hamburger Panel) -->
+  <div class="side-menu" id="sideMenu">
+    <ul>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="leaderboard.html">Leaderboard</a></li>
+      <li><a href="badges.html">Badges Earned</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+  </div>
+  <main>
+    <h1>Your Uploads</h1>
+    <div class="card-grid">
+      <div class="card">
+        <img src="images/upload1.png" alt="Upload 1"><h3>Summer Banner</h3>
+      </div>
+      <div class="card">
+        <img src="images/upload2.png" alt="Upload 2"><h3>Blog Header</h3>
+      </div>
+      <div class="card">
+        <img src="images/upload3.png" alt="Upload 3"><h3>Icon Set</h3>
+      </div>
+    </div>
+    <!-- Add Upload Button -->
+     <div class="card-gird">
+      <div class="card">
+    <button class="add-btn" id="addUploadBtn">+</button>
+  </main>
+
+  
+  <!-- Upload Modal -->
+  <div class="modal-overlay" id="modalOverlay4"></div>
+  <div class="modal" id="uploadModal">
+    <div class="modal-header">
+      <span class="close" id="closeUpload">&times;</span>
+      <h2>Upload Resource</h2>
+    </div>
+    <div class="modal-body">
+      <form id="uploadForm">
+        <input type="text" placeholder="Title" required>
+        <input type="file" required>
+        <select required>
+          <option value="">Select Category</option>
+          <option>Template</option>
+          <option>Logo</option>
+        </select>
+        <button type="submit" class="primary-btn">Upload</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+<footer class="footer">
+    <p>&copy; 2025 Creative Resource Hub</p>
+  </footer>
