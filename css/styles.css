@@ -1,0 +1,695 @@
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 80px; /* so fixed nav doesn’t hide section titles */
+}
+
+/* Root colors and fonts */
+:root {
+  --primary: #636B2F;   /* Olive green primary:contentReference[oaicite:19]{index=19} */
+  --secondary: #BAC095; /* Light olive */
+  --light: #F5F5F5;
+  --text-dark: #333;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background-color: #eaf7ea; /* light olive green */ 
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0px
+}
+
+/* Header and Navigation */
+.header {
+  display: flex;
+  justify-content: space-between; /* logo left, nav right */
+  align-items: center;
+  padding: 10px 20px;
+  background: var(--secondary);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+} 
+
+.logo h2 {
+  color: var(--primary);
+  font-size: 22px;
+}
+
+/* Flex container for nav links + buttons together */
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 40px; /* space between links and buttons */
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+  margin: 0;
+}
+
+.nav-links li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links li:not(:last-child)::after {
+  content: "|";
+  color: var(--primary);
+  margin-left: 10px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--primary);
+  padding: 8px 0;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #fff;
+}
+
+/* Header and Navigation */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: var(--secondary);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+
+/* Hamburger button styling (always visible for now) */
+.hamburger {
+  display: flex; /* show always */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.hamburger div {
+  height: 3px;
+  background-color: var(--primary);
+  border-radius: 2px;
+}
+
+/* Show hamburger on small screens */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-container {
+    display: none; /* hide normal nav on mobile */
+  }
+}
+
+
+/* Login & Sign Up buttons */
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.auth-buttons button {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-buttons button:hover {
+  background: var(--text-dark);
+}
+
+/* Responsive: stack nav on small screens */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+
+/* Side Menu (Hamburger Panel) */
+.side-menu {
+  position: fixed;
+  top: 0; left: -250px;
+  width: 250px; height: 100%;
+  background: rgba(255, 255, 255, 0.8); /* red overlay background */
+  padding-top: 60px;
+  transition: left 0.3s ease-in;
+  z-index: 150;
+}
+.side-menu ul { list-style: none; }
+/* Side Menu Links */
+.side-menu ul li a {
+  display: block;
+  padding: 15px;
+  color: #000000; /* default text color */
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Hover effect: green background */
+.side-menu ul li a:hover {
+  background-color: var(--primary); /* green defined in your CSS */
+  color: #fff; /* ensure text stays visible */
+}
+
+.side-menu.active {
+  left: 0; /* slide in from left */
+}
+/* Side Menu Overlay */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 140; /* below the side-menu */
+}
+.overlay.active {
+  display: block;
+}
+
+
+/* Hero Section */
+.hero {
+  margin-top: 40px;
+  padding: 60px; /* keeps the same rectangle size */
+  background: white;
+  border-radius: 30px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  animation: fadeIn 1.5s ease-in-out;
+  
+}
+
+/* Inside hero → text left, photo right */
+.hero-image {
+  display: flex;
+  align-items: flex-start;   /* text stays at the top */
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Text on the top-left */
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: var(--primary);
+  text-align: left;
+}
+.hero h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: var(--primary);
+  text-align: left;
+}
+
+/* Hero text container */
+.hero-text {
+  flex: 0 0 40%;   /* text takes 40% of width */
+  max-width: 40%;
+}
+.hero p{
+  font-size: 1.0em;
+  margin-bottom: 30px;
+  color: var(--primary);
+  text-align: left;
+
+}
+
+/* Image on the right side */
+.hero-image {
+  display: flex;
+  justify-content: space-between; /* text left, image right */
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.hero-image .text-container {
+  flex: 1; /* text takes available space */
+}
+
+.hero-image img {
+  max-width: 40%;      /* size of the image */
+  height: auto;
+  border-radius: 20px;
+  margin: 0;           /* remove extra margins */
+  flex-shrink: 0;      /* prevent shrinking */
+}
+
+
+.hero-photo {
+  flex: 0 0 55%;   /* image takes 55% of width */
+  max-width: 55%;
+}
+.hero-photo img {
+  width: 100%;     /* image fills container */
+  height: auto;
+  border-radius: 20px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;      /* space between buttons */
+  margin-top: 20px;
+  justify-content: flex-start; /* align buttons to left */
+}
+
+/* Templates section (same frame as hero) */
+#templates {
+  margin-top: 40px;
+  padding: 60px;
+  background: white;
+  border-radius: 30px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Heading */
+#templates h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: var(--primary);
+  text-align: left;
+}
+
+/* Column layout */
+.templates-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Cards */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  padding-bottom: 15px;
+  transition: transform 0.3s ease;
+  width: 100%;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h3 {
+  padding: 10px;
+  font-size: 1.2em;
+  color: var(--text-dark);
+}
+
+.card p {
+  padding: 0 10px;
+  font-size: 0.95em;
+  color: #555;
+}
+
+/* Photo same width as card */
+.templates-photo img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* View More button (inside the frame, same width as cards) */
+.view-more-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.view-more-btn:hover {
+  background: var(--primary-dark, #333);
+  transform: translateY(-3px);
+}
+
+/* Logos section same as Templates */
+#logos {
+  margin-top: 40px;
+  padding: 60px;
+  background: white;
+  border-radius: 30px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+#logos h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: var(--primary);
+  text-align: left;
+}
+
+.logos-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Cards + button reuse same .card and .view-more-btn styles */
+
+
+
+
+
+/* Search and Categories (Explore page) */
+.search-bar {
+  display: flex; justify-content: center; margin-bottom: 20px;
+}
+.search-bar input[type="text"] {
+  padding: 8px; width: 60%;
+  border: 1px solid #ccc; border-radius: 4px 0 0 4px;
+}
+.search-bar .primary-btn {
+  border-radius: 0 4px 4px 0;
+  background: var(--primary);
+  color: #fff;
+}
+.categories {
+  display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;
+}
+.categories a {
+  text-decoration: none;
+  background: var(--secondary);
+  color: var(--text-dark);
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+.categories a:hover {
+  background: var(--primary);
+  color: #fff;
+}
+.info-panels {
+  display: flex; gap: 20px; justify-content: center;
+  flex-wrap: wrap;
+}
+.info-card {
+  background: #fff; border-radius: 8px;
+  padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  max-width: 300px; text-align: center;
+}
+
+/* Leaderboard Table */
+table {
+  width: 100%;
+  border-collapse: separate; /* allows border-radius to show properly */
+  border-spacing: 0;          /* remove extra spacing */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+thead {
+  background-color: #636B2F;
+  color: white;
+}
+tbody tr:hover {
+  background-color: #d4e4d4; /* subtle hover highlight for rows */
+}
+
+table.leaderboard {
+  width: 100%; max-width: 600px;
+  margin: 20px auto; border-collapse: collapse;
+}
+table.leaderboard th, table.leaderboard td {
+  padding: 10px; border-bottom: 1px solid #ccc;
+}
+table.leaderboard th {
+  background: var(--secondary); color: var(--text-dark);
+  text-align: left;
+}
+
+/* Badges */
+.badges-grid {
+  display: flex; gap: 20px; flex-wrap: wrap;
+}
+.badge {
+  text-align: center;
+  width: 80px;
+}
+.badge img {
+  width: 50px; height: 50px;
+}
+.badge.locked img {
+  filter: grayscale(100%);
+}
+.badge p {
+  margin-top: 8px;
+  color: var(--text-dark);
+}
+
+/* Profile Info */
+.profile-info {
+  background: var(--text-dark); padding: 20px; max-width: 400px;
+  margin: 20px auto; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.profile-info p {
+  margin: 10px 0;
+}
+
+/* Forms (Feedback, etc.) */
+form {
+  max-width: 500px; margin: 20px auto;
+  display: flex; flex-direction: column; gap: 10px;
+}
+form input, form textarea, form select {
+  padding: 10px; border: 1px solid #ccc; border-radius: 4px;
+  width: 100%;
+}
+form textarea { height: 100px; }
+.primary-btn {
+  padding: 10px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Footer */
+.footer {
+  background: var(--text-dark);
+  text-align: center;
+  padding: 15px;
+  position: relative; bottom: 0; width: 100%;
+  color: var(--text-dark);
+}
+
+/* About modal container */
+.about-modal-link {
+  position: relative; /* needed for absolute modal */
+}
+
+/* Hidden modal */
+.about-modal {
+  display: none;
+  position: absolute;
+  top: 40px; /* below the nav link */
+  left: 0;
+  width: 250px;
+  background: #fff;
+  color: #333;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 500;
+}
+
+/* Show modal on hover */
+.about-modal-link:hover .about-modal {
+  display: block;
+}
+
+/* Optional modal styling */
+.about-modal p {
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.about-modal .team-member img {
+  width: 50px;       /* image size */
+  height: 50px;      /* same as width */
+  border-radius: 50%; /* makes it a circle */
+  object-fit: cover;  /* keeps aspect ratio, crops excess */
+  border: 2px solid #636B2F; /* optional green border */
+}
+
+.about-modal .primary-btn:hover {
+  background: var(--text-dark);
+}
+
+/* Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  z-index: 1000;
+}
+
+/* Feedback Modal */
+.feedback-modal {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  z-index: 1100;
+
+  /* Hidden by default */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertically center */
+  align-items: center;     /* horizontally center */
+  text-align: center;      /* center all text inside */
+}
+
+.feedback-modal h2 {
+  margin-bottom: 20px;
+  color: var(--primary);
+  text-align: center; /* heading centered */
+}
+
+.feedback-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;  /* center inputs/buttons horizontally */
+  width: 100%;
+}
+
+.feedback-modal form input,
+.feedback-modal form textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 90%;        /* limit input width */
+  max-width: 400px;  /* cap max width */
+  text-align: center; /* center text inside input */
+}
+
+.feedback-modal form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  align-self: center;  /* center button */
+}
+
+.feedback-modal form button:hover {
+  background: var(--text-dark);
+}
+
+
+
+
+/* ===========================
+   Base Modal (Login / Signup)
+=========================== */
+.modal {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -60%);
+  width: 350px;
+  max-height: 80vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+
+  /* Hidden by default */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%);
+}
+
+/* ===========================
+   Overlay (Shared by Modals)
+=========================== */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 900;
+
+  /* Hidden by default */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Feedback - Creative Resource Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/styles.css" rel="stylesheet">
+  <style>
+    /* Background homepage content */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .homepage-content {
+      filter: blur(5px) brightness(0.6); /* blurred and darkened */
+      pointer-events: none; /* prevent clicks on background */
+      -webkit-user-select: none; /* Safari support */
+      user-select: none;
+      height: 100vh;
+      overflow: auto;
+    }
+
+    /* Feedback modal box */
+    .feedback-modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+
+    .feedback-modal h2 {
+      margin-top: 0;
+      color: #4caf50;
+      text-align: center;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 150px;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      resize: vertical;
+      margin-bottom: 20px;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .submit-btn {
+      background-color: #636B2F;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover { background-color: #3e8e41; }
+
+    .cancel-btn {
+      background-color: #f44336;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .cancel-btn:hover { background-color: #d32f2f; }
+  </style>
+</head>
+<body>
+
+  <!-- Homepage content in the background -->
+  <div class="homepage-content">
+    <header class="header">
+      <div class="hamburger" id="hamburger">&#9776;</div>
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="templates.html">Templates</a></li>
+          <li><a href="logos.html">Logos</a></li>
+          <li><a href="about.html">About Us</a></li>
+          
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <h1>Welcome to Creative Resource Hub</h1>
+        <p>Download and share templates and logos.</p>
+      </section>
+      <!-- You can include more homepage content here if needed -->
+    </main>
+  </div>
+
+  <!-- Feedback Modal -->
+  <div class="feedback-modal">
+    <h2>Give Your Feedback</h2>
+    <form id="feedbackForm">
+      <textarea placeholder="Write your feedback here..." required></textarea>
+      <div class="button-group">
+        <button type="submit" class="submit-btn">Submit</button>
+        <button type="button" class="cancel-btn" onclick="window.location.href='index.html'">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // Handle form submit
+    document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Feedback submitted!');
+      window.location.href = 'index.html'; // go back to homepage after submit
+    });
+  </script>
+
+</body>
+</html>

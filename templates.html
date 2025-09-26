@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Creative Resource Hub - Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/styles.css" rel="stylesheet">
+  <script src="js/script.js" defer></script>
+  <style>
+    html {
+      scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with hamburger and nav -->
+  <header class="header">
+    <!-- Hamburger button -->
+    <div id="hamburger" class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="logo">
+      <h2>Creative Resource Hub</h2>
+    </div>
+
+    <nav class="main-nav">
+      <!-- Wrap both nav links and buttons in a single flex container -->
+      <div class="nav-container">
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#templates">Templates</a></li>
+          <li><a href="#logos">Logos</a></li>
+          <li class="about-modal-link">
+            <a href="#">About Us</a>
+            <div class="about-modal">
+              <h2>About Us</h2>
+              <h3>Our Team</h3>
+              <div class="team-grid">
+                <div class="team-member">
+                  <img src="images/member1.jpg" alt="Member 1">
+                  <div class="member-info">
+                    <h4>Pabitra Yakha</h4>
+                    <p>Founder and Developer</p>
+                  </div>
+                </div>
+                <div class="team-member">
+                  <img src="images/member2.jpg" alt="Member 2">
+                  <div class="member-info">
+                    <h4>Tsheten Lhamo</h4>
+                    <p>Researcher and co-founder</p>
+                  </div>
+                </div>
+                <div class="team-member">
+                  <img src="images/member3.jpg" alt="Member 3">
+                  <div class="member-info">
+                    <h4>Sanjay Chhertri</h4>
+                    <p>Designer and Support</p>
+                  </div>
+                </div>
+                <div class="team-member">
+                  <img src="images/member4.jpg" alt="Member 4">
+                  <div class="member-info">
+                    <h4>Sonam Choki</h4>
+                    <p>Designer and Support</p>
+                  </div>
+                </div>
+                <div class="team-member">
+                  <img src="images/member5.jpg" alt="Member 5">
+                  <div class="member-info">
+                    <h4>Tshering Choden</h4>
+                    <p>Project Leader</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- Feedback Link in Nav -->
+          <li><a href="#" class="feedback-modal-btn">Feedback</a></li>
+        </ul>
+
+        <!-- Auth buttons -->
+        <div class="auth-buttons">
+          <button id="loginBtn">Login</button>
+          <button id="signupBtn">Sign Up</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Side Menu (Hamburger Panel) -->
+  <div class="side-menu" id="sideMenu">
+    <ul>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="leaderboard.html">Leaderboard</a></li>
+      <li><a href="badges.html">Badges Earned</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <h1>All Templates</h1>
+    <div class="card-grid">
+      <div class="card">
+        <img src="images/template1.png" alt="Template 1"><h3>Modern Portfolio</h3>
+      </div>
+      <div class="card">
+        <img src="images/template2.png" alt="Template 2"><h3>Business Landing</h3>
+      </div>
+      <div class="card">
+        <img src="images/template3.png" alt="Template 3"><h3>Creative Blog</h3>
+      </div>
+      <div class="card">
+        <img src="images/template4.png" alt="Template 4"><h3>Photography</h3>
+      </div>
+      <div class="card">
+        <img src="images/template5.png" alt="Template 5"><h3>Startup Pitch</h3>
+      </div>
+      <div class="card">
+        <img src="images/template6.png" alt="Template 6"><h3>E-commerce</h3>
+      </div>
+      <div class="card">
+        <img src="images/template7.png" alt="Template 7"><h3>Portfolio Grid</h3>
+      </div>
+      <div class="card">
+        <img src="images/template8.png" alt="Template 8"><h3>Event Landing</h3>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Creative Resource Hub</p>
+  </footer>
+
+  <!-- Reuse modals from index.html -->
+  <div class="modal-overlay" id="modalOverlay2"></div>
+  <div class="modal" id="loginModal2"> ... </div>
+  <div class="modal" id="signupModal2"> ... </div>
+</body>
+</html>

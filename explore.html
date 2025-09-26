@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Creative Resource Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/styles.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    /* Triangle pointing left */
+    .back-triangle {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 0;
+      height: 0;
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent;
+      border-right: 30px solid #4caf50; /* triangle points left */
+      cursor: pointer;
+      z-index: 1000;
+      transition: transform 0.2s;
+    }
+    .back-triangle:hover {
+      transform: scale(1.2);
+    }
+    .content {
+      max-width: 900px;
+      margin: 80px auto 40px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .content h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #4caf50;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    .section h3 {
+      color: #333;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #4caf50;
+      display: inline-block;
+      padding-bottom: 4px;
+    }
+    .section p, .section ul {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #555;
+    }
+    @media (max-width: 600px) {
+      .content {
+        margin: 60px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Triangle Back Button -->
+  <div class="back-triangle" onclick="location.href='index.html'"></div>
+
+  <main class="content">
+    <h2>Creative Resource Hub</h2>
+
+    <div class="section" id="introduction">
+      <h3>Introduction</h3>
+      <p>Creative Resource Hub is a platform designed for students, designers, and creators to share and download high-quality templates and logos. It aims to make design resources accessible and easy to use for everyone.</p>
+    </div>
+
+    <div class="section" id="purpose">
+      <h3>Purpose</h3>
+      <p>The main purpose of Creative Resource Hub is to provide a centralized platform where creators can share their resources, inspire others, and simplify the design process through ready-to-use templates and logos.</p>
+    </div>
+
+    <div class="section" id="vision">
+      <h3>Vision</h3>
+      <p>To become the leading platform for creative resources, empowering students and professionals worldwide to produce high-quality designs with ease.</p>
+    </div>
+
+    <div class="section" id="mission">
+      <h3>Mission</h3>
+      <ul>
+        <li>Provide a wide variety of templates and logos for free or affordable use.</li>
+        <li>Create a community of creators and learners who support each other.</li>
+        <li>Continuously update resources to meet modern design trends.</li>
+      </ul>
+    </div>
+
+    <div class="section" id="features">
+      <h3>Features</h3>
+      <ul>
+        <li>Easy-to-download templates and logos.</li>
+        <li>Preview sections for templates and logos before downloading.</li>
+        <li>User authentication for login and signup.</li>
+        <li>Badge system to reward active contributors.</li>
+        <li>Responsive design for mobile and desktop users.</li>
+      </ul>
+    </div>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile - Creative Resource Hub</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.min.css"/>
+<style>
+  body { font-family:'Times New Roman', serif; margin:0; background:#f0f0f0; }
+  header { background:#BAC095; color:white; padding:20px; text-align:center; }
+  .profile-wrapper { display:flex; justify-content:center; align-items:center; min-height:calc(100vh - 80px); padding:20px; }
+  .profile-card { background:white; border-radius:12px; width:400px; max-width:90%; padding:40px 30px; text-align:center; box-shadow:0 6px 20px rgba(0,0,0,0.1);}
+  .avatar { width:120px; height:120px; border-radius:50%; border:3px solid #636B2F; object-fit:cover; margin-bottom:20px; cursor:pointer;}
+  .profile-info label { font-weight:bold; display:block; margin-top:15px;}
+  .profile-info input { width:100%; padding:10px; margin-top:5px; border-radius:6px; border:1px solid #ccc; text-align:center;}
+  .buttons { margin-top:25px; display:flex; justify-content:center; gap:15px;}
+  .buttons button { padding:10px 20px; border-radius:6px; border:none; cursor:pointer; color:white; font-weight:bold;}
+  .save-btn { background:#636B2F; }
+  .toast { visibility:hidden; min-width:250px; background:#636B2F; color:white; text-align:center; border-radius:6px; padding:16px; position:fixed; left:50%; bottom:30px; transform:translateX(-50%); opacity:0; transition: opacity 0.5s; z-index:1000;}
+  .toast.show { visibility:visible; opacity:1;}
+  input:invalid { box-shadow:none; outline:none; } /* remove red underline */
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Creative Resource Hub</h1>
+</header>
+
+<div class="profile-wrapper">
+  <div class="profile-card">
+    <img src="images/avatar1.jpg" alt="Avatar" class="avatar" id="avatar">
+
+    <form class="profile-info" novalidate>
+      <label>Name</label>
+      <input type="text" id="name" value="Alice">
+
+      <label>Username</label>
+      <input type="text" id="username" value="@alice">
+
+      <label>Email</label>
+      <input type="email" id="email" value="alice@example.com">
+
+      <label>Phone</label>
+      <input type="tel" id="phone" value="+97512345678">
+    </form>
+
+    <div class="buttons">
+      <button class="save-btn" id="saveBtn">Save Changes</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast">Profile saved successfully!</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"></script>
+<script>
+  const saveBtn = document.getElementById('saveBtn');
+  const toast = document.getElementById('toast');
+  const avatar = document.getElementById('avatar');
+
+  // Initialize phone input with country dropdown
+  const phoneInput = document.querySelector("#phone");
+  const iti = window.intlTelInput(phoneInput, {
+    initialCountry: "bt",
+    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js",
+  });
+
+  // Save Changes button
+  saveBtn.addEventListener('click', () => {
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3000);
+
+    console.log("Full phone number:", iti.getNumber());
+    console.log("Name:", document.getElementById('name').value);
+    console.log("Username:", document.getElementById('username').value);
+    console.log("Email:", document.getElementById('email').value);
+  });
+
+  // Change avatar on click
+  avatar.addEventListener('click', () => {
+    const newAvatar = prompt("Enter new avatar URL:");
+    if(newAvatar) avatar.src = newAvatar;
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Creative Resource Hub - Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/styles.css" rel="stylesheet">
+  <script src="js/script.js" defer></script>
+  <style>
+    html {
+      scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with hamburger and nav -->
+  <header class="header">
+    <!-- Hamburger button -->
+    <div id="hamburger" class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="logo">
+      <h2>Creative Resource Hub</h2>
+    </div>
+
+    <nav class="main-nav">
+      <!-- Wrap both nav links and buttons in a single flex container -->
+      <div class="nav-container">
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#templates">Templates</a></li>
+          <li><a href="#logos">Logos</a></li>
+          <li class="about-modal-link">
+            <a href="#">About Us</a>
+            <div class="about-modal">
+              <h2>About Us</h2>
+              <h3>Our Team</h3>
+              <div class="team-grid">
+                <div class="team-member">
+                  <img src="images/member1.jpg" alt="Member 1">
+                  <div class="member-info">
+                    <h4>Pabitra Yakha</h4>
+                    <p>Founder and Developer</p>
+                  </div>
+                </div>
+                <div class="team-member">
+                  <img src="images/member2.jpg" alt="Member 2">
+                  <div class="member-info">
+                    <h4>Tsheten Lhamo</h4>
+                    <p>Researcher and co-founder</p>
+                  </div>
+                </div>
+                <div class="team-member">
+                  <img src="images/member3.jpg" alt="Member 3">
+                  <div class="member-info">
+                    <h4>Sanjay Chhertri</h4>
+                    <p>Designer and Support</p>
+                  </div>
+                </div>
+                <div class="team-member">
+                  <img src="images/member4.jpg" alt="Member 4">
+                  <div class="member-info">
+                    <h4>Sonam Choki</h4>
+                    <p>Designer and Support</p>
+                  </div>
+                </div>
+                <div class="team-member">
+                  <img src="images/member5.jpg" alt="Member 5">
+                  <div class="member-info">
+                    <h4>Tshering Choden</h4>
+                    <p>Project Leader</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <!-- Feedback Link in Nav -->
+          <li><a href="#" class="feedback-modal-btn">Feedback</a></li>
+        </ul>
+
+        <!-- Auth buttons -->
+        <div class="auth-buttons">
+          <button id="loginBtn">Login</button>
+          <button id="signupBtn">Sign Up</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Side Menu (Hamburger Panel) -->
+  <div class="side-menu" id="sideMenu">
+    <ul>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="leaderboard.html">Leaderboard</a></li>
+      <li><a href="badges.html">Badges Earned</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+  <div class="hero-image">
+
+    <!-- Text + Buttons Container -->
+    <div class="hero-text">
+      <h1>Welcome to Creative Resource Hub</h1>
+      <p>Discover amazing templates, logos, and resources to boost your creativity.</p>
+
+      <!-- Buttons -->
+      <div class="hero-buttons">
+        <a href="upload.html" class="primary-btn">Upload</a>
+        <a href="explore.html" class="primary-btn">Explore</a>
+      </div>
+    </div>
+
+    <!-- Hero Image on the Right -->
+    <div class="hero-photo">
+      <img src="images/hero-image.png" alt="Creative Illustration">
+    </div>
+
+  </div>
+</section>
+
+
+
+    <!-- template section -->
+<section id="templates">
+  
+  <h2>Templates</h2>
+  <div class="templates-grid">
+    <div class="card">
+      <img src="template1.jpg" alt="Template 1">
+      <h3>Modern Portfolio</h3>
+      <p>Responsive portfolio template.</p>
+    </div>
+
+    <div class="card">
+      <img src="template2.jpg" alt="Template 2">
+      <h3>Business Landing</h3>
+      <p>Sleek landing page.</p>
+    </div>
+
+    <div class="card">
+      <img src="template3.jpg" alt="Template 3">
+      <h3>Creative Blog</h3>
+      <p>Minimalist blog design.</p>
+    </div>
+
+  
+    <a href="templates.html" class="view-more-btn">View More</a>
+  </div>
+</section>
+
+
+
+<section id="logos">
+  <h2>Logos</h2>
+  <div class="logos-grid">
+    <div class="card">
+      <img src="logo1.jpg" alt="Logo 1">
+      <h3>Brand Logo 1</h3>
+      <p>Clean and minimal logo design.</p>
+    </div>
+
+    <div class="card">
+      <img src="logo2.jpg" alt="Logo 2">
+      <h3>Brand Logo 2</h3>
+      <p>Creative abstract style.</p>
+    </div>
+
+    <div class="card">
+      <img src="logo3.jpg" alt="Logo 3">
+      <h3>Brand Logo 3</h3>
+      <p>Professional corporate look.</p>
+    </div>
+    <a href="logos.html" class="view-more-btn">View More</a>
+  </div>
+</section>
+
+
+  <!-- One Shared Overlay for All Modals -->
+  
+  <div class="modal-overlay" id="modalOverlay"></div>
+
+  <!-- Feedback Modal -->
+  <div class="modal" id="feedbackModal">
+    
+    <div class="modal-header">
+      <span class="close" id="closeFeedback">&times;</span>
+      <h2>Feedback</h2>
+    </div>
+    <div class="modal-body">
+      <p>We would love to hear your thoughts! Fill out the form below:</p>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Feedback" required></textarea>
+        <button type="submit" class="primary-btn">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Login Modal -->
+  <div class="modal" id="loginModal">
+    <div class="modal-header">
+      <span class="close" id="closeLogin">&times;</span>
+      <h2>Login</h2>
+    </div>
+    <div class="modal-body">
+      <form>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit" class="primary-btn">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Sign Up Modal -->
+  <div class="modal" id="signupModal">
+    <div class="modal-header">
+      <span class="close" id="closeSignup">&times;</span>
+      <h2>Sign Up</h2>
+    </div>
+    <div class="modal-body">
+      <form>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit" class="primary-btn">Sign Up</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Creative Resource Hub</p>
+  </footer>
+</body>
+</html>
